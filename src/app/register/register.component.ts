@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+//aquí agregamos la variable que se necesita para las validaciones de la contraseña
+  //paspassword: string | undefined;
+ // paspasswordArray: string;
+ 
 
-  constructor() { }
+  constructor() { 
+    //this.paspasswordArray = [];
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
   }
 
 }

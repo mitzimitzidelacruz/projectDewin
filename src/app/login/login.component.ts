@@ -16,14 +16,7 @@ export class LoginComponent implements OnInit {
   
   test (){
 
-    //validaciones que creo que no esta bien
-    let inputPassword = document.getElementById("password") as HTMLInputElement;
-    let valuesPassword = inputPassword.value;
-    if (valuesPassword.length >= 8) {
-      console.log("Ingreso correctamente");
-    }else{
-      alert("El Minimo de Caracteres es de 8");
-    }
+    
   }
   
 }

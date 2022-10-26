@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl true --ssl-key {C:/Users/Vero/Desktop/9no/DEWIN/U2/proyectoDewin/projectDewin-Front/localhost.key} --ssl-cert { C:/Users/Vero/Desktop/9no/DEWIN/U2/proyectoDewin/projectDewin-Front/localhost.crt}",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
