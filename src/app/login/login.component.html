@@ -7,30 +7,21 @@
       </div>
     </div>
     <h2 class="card-heading">
-      BIENVENIDO
+      <pre>INICIA SESIÓN</pre>
+      <pre>BIENVENIDOS LOBOS</pre>
     </h2>
-   
-      <!-- <input matInput placeholder="Agrega tu Username">
-        <input matInput placeholder="Agrega tu Email">
-        <input matInput type='password' placeholder="Agrega tu Contraseña">--> 
-
-      
-
+    <form (submit)="singIn()" class="login-form">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" name="email" class="form-control" placeholder="Email" required autofocus>
       </div>
-    
-    <div class="buttons">
-      <div class="login">
-        <button>
-          <a href="home" class="btn1" mat-flat-button color="primary">ENTRAR</a>
-        </button>
+      <div class="form-group">
+        <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" name="password" class="form-control" placeholder="Contraseña" required>
       </div>
-      <div class="register">
-        <button>
-          <a href="register" class="btn1" mat-flat-button color="primary">Registrate</a>
-        </button>
-        <button>
-          <a href="forgetpas" class="btn1" mat-flat-button color="primary">¿Olvidaste tu contraseña?</a>
-        </button>
-      </div>
-    </div>
+        <div class="login">
+          <button type="submit" class="btn btn-primary btn-block" >
+            ENTRAR
+          </button>
+        </div>
+      </form>
   </div>
+</div>

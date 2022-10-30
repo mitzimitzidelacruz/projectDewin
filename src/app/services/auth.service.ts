@@ -14,4 +14,7 @@ export class AuthService {
    return this.http.post<any>(this.URL + '/signUp', user);
   }
 
+  signIn(user: any){
+    return this.http.post<any>(this.URL + '/signIn', user);
+  }
 }
