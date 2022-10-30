@@ -5,9 +5,17 @@ import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CareersComponent } from './careers/careers.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { PrivateTasksComponent } from './private-tasks/private-tasks.component';
+
 
 const routes: Routes = [
 
+{path: '', redirectTo: '/tasks',
+pathMatch: 'full'},
+//ruta que necesita validacion
+{path: 'private', component:PrivateTasksComponent},
+{path: 'tasks', component: TasksComponent},
 {path: 'login', component: LoginComponent},
 {path: 'register', component: RegisterComponent},
 {path: 'home', component: HomeComponent},
