@@ -16,16 +16,24 @@ export class RegisterComponent implements OnInit {
     password: ''
   }
 
+  passSecury = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
+
   constructor(
     private authService: AuthService,
     private router: Router
     ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
   }
   singUp() {
+    if(this.passSecury.test(this.user.password)){
+      console.log("Contraseña correctisima")
+    }else{
+      alert("Debe contar con mayúsculas, minúsculas y carácteres especiales")
+      return;
+    }
   this.authService.signUp(this.user)
   .subscribe(
     res => {

@@ -8,13 +8,15 @@ import { CareersComponent } from './careers/careers.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { PrivateTasksComponent } from './private-tasks/private-tasks.component';
 
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
 
-{path: '', redirectTo: '/tasks',
+{path: '', redirectTo: '/login',
 pathMatch: 'full'},
 //ruta que necesita validacion
-{path: 'private', component:PrivateTasksComponent},
+{path: 'private', component:PrivateTasksComponent, canActivate: [AuthGuard]},
 {path: 'tasks', component: TasksComponent},
 {path: 'login', component: LoginComponent},
 {path: 'register', component: RegisterComponent},
