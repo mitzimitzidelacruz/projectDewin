@@ -7,13 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home">Pagina principal</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="careers">Carreras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="private">Tareas privadas</a>
+            <a class="nav-link" href="private">Docentes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tasks" routerLinkActive="active">Tareas</a>
+            <a class="nav-link" href="tasks" routerLinkActive="active">Nosotros</a>
           </li>
           <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
             <li><a routerLink="/login" routerLinkActive="active">Ingresar a mi sesión</a></li>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { switchAll } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -27,8 +28,7 @@ export class LoginComponent implements OnInit {
     this.authservice.signIn(this.user)
       .subscribe(
         res => {
-          console.log(res)
-          localStorage.setItem('token', res.token);
+          console.log(res);
           this.router.navigate(['/home']);
         },
         err => console.log(err)
