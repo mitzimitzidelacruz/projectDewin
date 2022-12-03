@@ -9,6 +9,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { PrivateTasksComponent } from './private-tasks/private-tasks.component';
 
 import { AuthGuard } from './auth.guard';
+import { ListarTalleresComponent } from './components/listar-talleres/listar-talleres.component';
+import { CrearTalleresComponent } from './components/crear-talleres/crear-talleres.component';
+;
 
 
 const routes: Routes = [
@@ -22,6 +25,12 @@ pathMatch: 'full'},
 {path: 'register', component: RegisterComponent},
 {path: 'home', component: HomeComponent},
 {path: 'careers', component: CareersComponent},
+{path:'listar-taller', component: ListarTalleresComponent},
+{path:'crear-taller',component: CrearTalleresComponent,},
+{path:'editar-taller/:id', component: CrearTalleresComponent},
+
+
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
