@@ -5,19 +5,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from '../app/components/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { CareersComponent } from './careers/careers.component';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CareersComponent } from './components/careers/careers.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { TasksComponent } from './components/tasks/tasks.component';
-import { PrivateTasksComponent } from './private-tasks/private-tasks.component';
+import { PrivateTasksComponent } from '../app/components/private-tasks/private-tasks.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CrearTalleresComponent } from './components/crear-talleres/crear-talleres.component';
 
 
 
@@ -32,6 +31,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     FooterComponent,
     TasksComponent,
     PrivateTasksComponent,
+    CrearTalleresComponent
 
 
   ],
@@ -42,7 +42,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    CrearTalleresComponent
   ],
   providers: [
     AuthGuard,

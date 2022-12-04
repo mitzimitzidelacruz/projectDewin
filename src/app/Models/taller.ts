@@ -1,14 +1,16 @@
+
 export class Taller{
     _id?: number;
     nombre: string;
-    categoria: string;
+    instructor: string;
     ubicacion: string;
-    horas: number;
+    hora: number;
 
-constructor(nombre: string, categoria: string, ubicacion: string, horas: number) {
+
+constructor(nombre: string, instructor: string, ubicacion: string, hora: number) {
     this.nombre = nombre;
-    this.categoria = categoria;
+    this.instructor = instructor;
     this.ubicacion = ubicacion;
-    this.horas = horas;
+    this.hora = hora;
 
-  }}
+}}

@@ -5,37 +5,31 @@
             <div class="card-body text-center">
                 <span class="titulo">LISTADO DE TALLERES</span>
                 <button class="btn btn-success float-end" routerLink="crear-taller">NUEVO</button>
-                <table class="table table-dark table-striped mt-5">
+                <table *ngIf="listTaller.length > 0" class="table table-dark table-striped mt-5">
                     <thead>
                       <tr>
                         <th scope="col">Taller</th>
                         <th scope="col">Instructor</th>
                         <th scope="col">Ubicacion</th>
                         <th scope="col">Horas semanales</th>
-                        <th scope="col">  <i class="fa-solid fa-tricycle"></i></th>
+                        <th scope="col">
+                        <i class="fa-solid fa-tricycle"></i></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th>Música</th>
-                        <td>Alicia Villareal</td>
-                        <td>Aulas 5</td>
-                        <td>9</td>
-                        <td>  <i class="fa-thin fa-pen-to-square"></i>
-                          <i class="fa-thin fa-trash"></i>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Boxeo</th>
-                        <td>Jacob Kings</td>
-                        <td>Taller</td>
-                        <td>17</td>
-                        <td><i class="fa-thin fa-pen-to-square"></i>
-                            <i class="fa-thin fa-trash"></i>
+                      <tr *ngFor="let taller of listTaller">
+                        <th>{{ taller.nombre }}</th>
+                        <td>{{ taller.instructor }}</td>
+                        <td>{{ taller.ubicacion }}</td>
+                        <td>{{ taller.hora | currency: 'USD'}}</td>
+                        <td>
+                          <i [routerLink]="['/editar-taller', taller._id ]" class="fa-thin fa-pen-to-square"></i>
+                          <i (click)="eliminarTaller(taller._id" class="fa-thin fa-trash"></i>
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                  <h5 style="text-align: start; margin-top: 10px;" *ngIf="listTaller.length == 0">No hay talleres para mostrar</h5>
             </div>
             </div>
         </div>

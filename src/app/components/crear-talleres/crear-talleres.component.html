@@ -3,16 +3,16 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body text-center">
-                    <span class="titulo">CREAR TALLER</span>
-                    <form class="mt-3" [formGroup]="tallerForm" (ngSubmit)="agregarTaller()">
-                    <div class="mb-3">
+                    <span class="titulo">{{ titulo }}</span>
+                    <form [formGroup]="tallerForm" (ngSubmit)="agregarTaller()">
+                      <div class="mb-3">
                         <input type="text" formControlName="taller"
                         class="form-control form-control-lg" placeholder="Ingresa taller">
 
                         <div class="text-danger"
                         *ngIf="tallerForm.get('taller')?.hasError('required') && tallerForm.get('taller')?.touched">
                         <span>El nombre del taller <strong>es obligatorio</strong></span>
-                    </div>
+                        </div>
                       </div>
                       <div class="mb-3">
                         <input type="text" formControlName="instructor"
@@ -40,10 +40,9 @@
                       <div class="mb-3">
                         <button roterLink="listar-taller" class="btn btn-secondary btn-lg float-start">VOLVER</button>
                         <button type="submit" [disable]="tallerForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
-
                       </div>
-                </form>
                 </div>
+              </form>
             </div>
         </div>
     </div>
